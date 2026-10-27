@@ -1,4 +1,3 @@
-"""Strictly past features: observations at the same timestamp are excluded."""
 import numpy as np
 
 
