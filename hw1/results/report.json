@@ -1,0 +1,431 @@
+{
+  "seed": 17,
+  "data": {
+    "raw_rows": 542338,
+    "missing": {
+      "user_id": 0,
+      "item_id": 0,
+      "rating": 0,
+      "timestamp": 0
+    },
+    "invalid_rows": 12806,
+    "duplicate_pairs": 0,
+    "clean_rows": 529532,
+    "rows": 206097,
+    "users": 11291,
+    "items": 3500,
+    "train_rows": 185179,
+    "validation_rows": 12456,
+    "test_rows": 8462,
+    "cutoffs": [
+      1485365138,
+      1498246601
+    ],
+    "excluded": [
+      {
+        "period": "validation",
+        "before_filter": 52953,
+        "retained": 12456,
+        "new_users": 4132,
+        "new_items": 7143
+      },
+      {
+        "period": "test",
+        "before_filter": 52954,
+        "retained": 8462,
+        "new_users": 4491,
+        "new_items": 8945
+      }
+    ],
+    "sparsity": 0.9947847969938131
+  },
+  "validation_users": 2827,
+  "test_users": 2067,
+  "search": [
+    {
+      "model": "UserCF",
+      "parameters": {
+        "neighbors": 20
+      },
+      "seconds": 2.430841333000001,
+      "NDCG@10": 0.06663815154155513,
+      "Recall@10": 0.08851322481657083
+    },
+    {
+      "model": "UserCF",
+      "parameters": {
+        "neighbors": 60
+      },
+      "seconds": 2.3322143330000014,
+      "NDCG@10": 0.0805884943187892,
+      "Recall@10": 0.11564955766102272
+    },
+    {
+      "model": "UserCF",
+      "parameters": {
+        "neighbors": 120
+      },
+      "seconds": 2.38133225,
+      "NDCG@10": 0.08677665264532025,
+      "Recall@10": 0.12111332802690365
+    },
+    {
+      "model": "EASE",
+      "parameters": {
+        "regularization": 50
+      },
+      "seconds": 2.6094680839999977,
+      "NDCG@10": 0.09357849455298622,
+      "Recall@10": 0.13196638791574092
+    },
+    {
+      "model": "EASE",
+      "parameters": {
+        "regularization": 250
+      },
+      "seconds": 2.5392790830000003,
+      "NDCG@10": 0.09427275408308854,
+      "Recall@10": 0.13338739083230314
+    },
+    {
+      "model": "EASE",
+      "parameters": {
+        "regularization": 1000
+      },
+      "seconds": 2.659495207999999,
+      "NDCG@10": 0.09254228392263325,
+      "Recall@10": 0.1332922166307556
+    },
+    {
+      "model": "iALS",
+      "parameters": {
+        "dimensions": 24,
+        "regularization": 0.5
+      },
+      "seconds": 2.2005358330000035,
+      "NDCG@10": 0.06883672955133693,
+      "Recall@10": 0.10744049050955896
+    },
+    {
+      "model": "iALS",
+      "parameters": {
+        "dimensions": 24,
+        "regularization": 5.0
+      },
+      "seconds": 2.178385749999997,
+      "NDCG@10": 0.06876882953678687,
+      "Recall@10": 0.10806806154904054
+    },
+    {
+      "model": "iALS",
+      "parameters": {
+        "dimensions": 48,
+        "regularization": 0.5
+      },
+      "seconds": 3.6685937499999994,
+      "NDCG@10": 0.07144939231629563,
+      "Recall@10": 0.1051993918087516
+    },
+    {
+      "model": "iALS",
+      "parameters": {
+        "dimensions": 48,
+        "regularization": 5.0
+      },
+      "seconds": 3.7206265410000015,
+      "NDCG@10": 0.0719635696248138,
+      "Recall@10": 0.10631573226542865
+    },
+    {
+      "model": "GradedALS",
+      "parameters": {
+        "dimensions": 24,
+        "regularization": 0.5
+      },
+      "seconds": 2.181582249999998,
+      "NDCG@10": 0.07408188210250918,
+      "Recall@10": 0.11343826595607512
+    },
+    {
+      "model": "GradedALS",
+      "parameters": {
+        "dimensions": 24,
+        "regularization": 5.0
+      },
+      "seconds": 2.1954867080000042,
+      "NDCG@10": 0.0736453576687596,
+      "Recall@10": 0.11265487033513878
+    },
+    {
+      "model": "GradedALS",
+      "parameters": {
+        "dimensions": 48,
+        "regularization": 0.5
+      },
+      "seconds": 3.624792040999999,
+      "NDCG@10": 0.07912246232497339,
+      "Recall@10": 0.11640311801794052
+    },
+    {
+      "model": "GradedALS",
+      "parameters": {
+        "dimensions": 48,
+        "regularization": 5.0
+      },
+      "seconds": 3.6520407499999976,
+      "NDCG@10": 0.07925499666569631,
+      "Recall@10": 0.11477913931798271
+    },
+    {
+      "model": "FM",
+      "parameters": {
+        "factors": 16,
+        "reg": 1e-05
+      },
+      "seconds": 7.273945041999994,
+      "NDCG@10": 0.0639300783766859,
+      "Recall@10": 0.10635432160403276,
+      "best_epoch": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.5751422154928454,
+          "ndcg": 0.0639300783766859
+        },
+        {
+          "epoch": 2,
+          "loss": 0.5287406051754826,
+          "ndcg": 0.06208707021249157
+        },
+        {
+          "epoch": 3,
+          "loss": 0.5167486032787696,
+          "ndcg": 0.057195316057413736
+        },
+        {
+          "epoch": 4,
+          "loss": 0.5087098038809609,
+          "ndcg": 0.06259736054751994
+        }
+      ]
+    },
+    {
+      "model": "FM",
+      "parameters": {
+        "factors": 16,
+        "reg": 0.0001
+      },
+      "seconds": 4.453810541999999,
+      "NDCG@10": 0.0639300783766859,
+      "Recall@10": 0.10635432160403276,
+      "best_epoch": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.57514231008829,
+          "ndcg": 0.0639300783766859
+        },
+        {
+          "epoch": 2,
+          "loss": 0.5287411800212568,
+          "ndcg": 0.06208707021249157
+        },
+        {
+          "epoch": 3,
+          "loss": 0.5167497348844368,
+          "ndcg": 0.057195316057413736
+        },
+        {
+          "epoch": 4,
+          "loss": 0.5087116070280867,
+          "ndcg": 0.06259736054751994
+        }
+      ]
+    },
+    {
+      "model": "FM",
+      "parameters": {
+        "factors": 32,
+        "reg": 1e-05
+      },
+      "seconds": 5.268263500000003,
+      "NDCG@10": 0.06550884813519195,
+      "Recall@10": 0.10733135066625625,
+      "best_epoch": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.5733329882864022,
+          "ndcg": 0.06550884813519195
+        },
+        {
+          "epoch": 2,
+          "loss": 0.5278841934943309,
+          "ndcg": 0.06405324519534633
+        },
+        {
+          "epoch": 3,
+          "loss": 0.5139682827023583,
+          "ndcg": 0.05761060550742435
+        },
+        {
+          "epoch": 4,
+          "loss": 0.5035051458054929,
+          "ndcg": 0.06204676110874963
+        }
+      ]
+    },
+    {
+      "model": "FM",
+      "parameters": {
+        "factors": 32,
+        "reg": 0.0001
+      },
+      "seconds": 5.096184457999996,
+      "NDCG@10": 0.06550884813519195,
+      "Recall@10": 0.10733135066625625,
+      "best_epoch": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.5733330673374972,
+          "ndcg": 0.06550884813519195
+        },
+        {
+          "epoch": 2,
+          "loss": 0.5278848362964621,
+          "ndcg": 0.06405324519534633
+        },
+        {
+          "epoch": 3,
+          "loss": 0.5139695841219896,
+          "ndcg": 0.05761060550742435
+        },
+        {
+          "epoch": 4,
+          "loss": 0.5035074339126354,
+          "ndcg": 0.06204676110874963
+        }
+      ]
+    }
+  ],
+  "chosen": {
+    "UserCF": {
+      "neighbors": 120
+    },
+    "iALS": {
+      "dimensions": 48,
+      "regularization": 5.0
+    },
+    "GradedALS": {
+      "dimensions": 48,
+      "regularization": 5.0
+    },
+    "EASE": {
+      "regularization": 250
+    },
+    "FM": {
+      "factors": 32,
+      "reg": 1e-05,
+      "epochs": 1
+    },
+    "GradedALS_matched": {
+      "dimensions": 48,
+      "regularization": 5.0
+    },
+    "FM_ID": {
+      "factors": 32,
+      "reg": 1e-05,
+      "epochs": 1,
+      "metadata": false
+    }
+  },
+  "final": [
+    {
+      "model": "UserCF",
+      "parameters": {
+        "neighbors": 120
+      },
+      "seconds": 2.7796393329999916,
+      "NDCG@10": 0.07828758829025716,
+      "Recall@10": 0.1246273963957296
+    },
+    {
+      "model": "iALS",
+      "parameters": {
+        "dimensions": 48,
+        "regularization": 5.0
+      },
+      "seconds": 3.7073249579999867,
+      "NDCG@10": 0.0648777984826292,
+      "Recall@10": 0.10654238227699682
+    },
+    {
+      "model": "GradedALS",
+      "parameters": {
+        "dimensions": 48,
+        "regularization": 5.0
+      },
+      "seconds": 3.700948416000003,
+      "NDCG@10": 0.07102817123217321,
+      "Recall@10": 0.11307296347006782
+    },
+    {
+      "model": "EASE",
+      "parameters": {
+        "regularization": 250
+      },
+      "seconds": 3.045269499999989,
+      "NDCG@10": 0.09138002353120091,
+      "Recall@10": 0.1419059980692518
+    },
+    {
+      "model": "FM",
+      "parameters": {
+        "factors": 32,
+        "reg": 1e-05,
+        "epochs": 1
+      },
+      "seconds": 2.394068125000004,
+      "NDCG@10": 0.047549866814263236,
+      "Recall@10": 0.08595896846176562
+    },
+    {
+      "model": "GradedALS_matched",
+      "parameters": {
+        "dimensions": 48,
+        "regularization": 5.0
+      },
+      "seconds": 3.700948416000003,
+      "NDCG@10": 0.07102817123217321,
+      "Recall@10": 0.11307296347006782
+    },
+    {
+      "model": "FM_ID",
+      "parameters": {
+        "factors": 32,
+        "reg": 1e-05,
+        "epochs": 1,
+        "metadata": false
+      },
+      "seconds": 0.6474780829999958,
+      "NDCG@10": 0.054527472685409306,
+      "Recall@10": 0.08391314314586311
+    }
+  ],
+  "example": {
+    "user": 7,
+    "items": [
+      930,
+      3438,
+      278,
+      2141,
+      1629,
+      3457,
+      162,
+      1013,
+      1236,
+      982
+    ]
+  }
+}
